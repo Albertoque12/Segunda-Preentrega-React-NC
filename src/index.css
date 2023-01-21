@@ -1,0 +1,17 @@
+
+
+
+.itemlistcontainer{
+  background-color: #646cff;
+}
+
+.navbar{
+  background-color: #4d9be0;
+
+}
+
+.cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
