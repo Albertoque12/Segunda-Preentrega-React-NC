@@ -13,10 +13,10 @@ let productos = [
     {id: '8', categoria: 'zapatos', name: 'MamáBurak', price: 250, foto: 'https://www.flexi.com.mx/medias/402801-negro-derecha.jpg?context=bWFzdGVyfGltYWdlc3wyNDc1Njd8aW1hZ2UvanBlZ3xoMzIvaDIxLzg4MDAxNTEyNzM1MDIvNDAyODAxLW5lZ3JvLWRlcmVjaGEuanBnfGMzNThkYWRhNTFmOTIxNmM1MDdiZDhlMDJmNTBkMTAzYmY4YTZmNTc4M2M5OTA0YzIwNGI4Y2YxNTE3ZjhkODM'}
 ]
 
-const gFetch = () => {
+const gFetch = (id) => {
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
-            resolve(productos)
+            resolve(id ? productos.find(prod => prod.id === id) : productos)
         }, 1000)
     })
 }
