@@ -56,7 +56,8 @@ const ItemListContainer = () => {
 
 
         return(
-            <div className="cards">
+            <div className="cards title">
+                <h1>Bienvenido a tu Librearía Digital "Macondo"</h1>
                 {/*<h2>{saludo}</h2>
                 <button onClick={()=>setBoolean(!boolean)}>Cambiar estado</button>*/}
 

@@ -18,8 +18,8 @@ getItems()
     <NavBar/>
       <Routes>
 
-          <Route path='/' element={<ItemListContainer saludo={"Promises ↓"}/>} />
-          <Route path='/category/:categoryId' element={<ItemListContainer saludo={"Promises ↓"}/>} />
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/category/:categoryId' element={<ItemListContainer />} />
           <Route path='/detail/:detailId' element={<ItemDetailContainer/>} />
           <Route path='/cart' element={<CartContainer/>} />
 
