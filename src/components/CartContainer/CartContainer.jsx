@@ -11,6 +11,7 @@ const CartContainer = () => {
         validEmail: "",
 
     })
+    const [orderId, setOrderId] = useState(null)
     const {cartList, vaciarCarrito, precioTotal, eliminarItem} = useCartContext()
     const { name, phone, email, validEmail } = dataForm;
     const generarOrden = (evt) => {
@@ -25,7 +26,7 @@ const CartContainer = () => {
 
         order.buyer = dataForm
 
-        order.items = cartList.map(({id, name, price}) => ({name, price, id}))
+        order.items = cartList.map(({id, name, price,}) => ({name, price, id, orderId}))
 
         order.total = precioTotal()
 
@@ -43,6 +44,7 @@ const CartContainer = () => {
                 email:"",
                 validEmail:"",
             })
+            setOrderId(res.id)
             setShowOrderDetails(true)
         })
         .catch(err => console.log(err))
@@ -122,7 +124,7 @@ const CartContainer = () => {
             
                     {showOrderDetails && (
   <div>
-    <h3>Detalle de compra</h3>
+    <h3>Detalle de compra. Su número de ticket es: {orderId}</h3>
     <ul>
       {cartList.map((product) => (
         <li className="lista" key={product.id}>
